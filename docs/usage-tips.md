@@ -13,6 +13,9 @@ the final command is assembled.
 
 ## Modifying command outside of a config file
 
+AnnoShenk provides two methods of modifying a command without adjusting a
+config file.
+
 ### Prefix flags to the final command using `--head`
 
 Any values supplied to the `--head` flag will be blindly **prefixed**
@@ -23,5 +26,5 @@ prior to the prescribed command.
 
 Any values supplied to the `--tail` flag will be blindly **suffixed**
 to the final command, e.g., `--tail 192.168.1.5` would ensure that a
-target is suffixed to the [examples](examples/) command, giving a clear
+target is suffixed to the [nmap example](../examples/nmap.yml), giving a clear
 target to scan.
