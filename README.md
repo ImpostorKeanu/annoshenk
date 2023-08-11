@@ -3,6 +3,12 @@ configuration files for any command line utility. It was inspired
 by [RobotClone](https://github.com/Wh1t3Rh1n0/RobotClone/tree/main),
 but sacrifices comment-based simplicity for a YAML file format.
 
+# How it works
+
+A YAML config defines a list of "items" that represent parts of a
+command that should be executed. Each part is concatenated to form
+a command that is then executed _by the OS_ (**not** a shell like bash).
+
 # Usage
 
 ```bash
