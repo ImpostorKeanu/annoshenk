@@ -1,0 +1,64 @@
+# =================
+# BASE NMAP COMMAND
+# =================
+
+- flag: nmap
+  delimiter: null
+  default: null
+  value: null
+  comments:
+    - NMap binary.
+  example_values: []
+  exclude: false
+
+# ================
+# FLAG DEFINITIONS
+# ================
+
+- flag: -sS
+  comments:
+    - Perform a SYN scan.
+
+- flag: -Pn
+  comments:
+    - Disable ping.
+
+- flag: -n
+  comments:
+    - Disable name resolution.
+
+- flag: --randomize-hosts
+  comments:
+    - Scan hosts in a random order.
+
+- flag: --max-retries
+  default: 0
+  comments:
+    - |
+      Do not make more than one
+      attempt to reach each port.
+
+- flag: --max-scan-delay
+  default: 1s
+  comments:
+    - |
+      Maximum scan delay of 1 second
+      between probes.
+
+- flag: --max-rtt-timeout
+  default: 500ms
+  comments:
+    - Do not wait more than 500ms for a response.
+
+- flag: --source-port
+  default: 53
+  comments:
+    - Send traffic out via port 53.
+
+- flag: -vv
+  comments:
+    - Display extra verbose output.
+
+- flag: -p-
+  comments:
+    - Scan all possible ports.
