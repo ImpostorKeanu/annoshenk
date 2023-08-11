@@ -1,0 +1,29 @@
+on:
+  push:
+    tags:
+      - '*-release'
+
+jobs:
+
+  build_annoshenk:
+    name: Build AnnoShenk
+    runs-on: ubuntu-latest
+    container:
+      image: golang:1.20-bullseye
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        id: build-binary
+        run: |
+          GOOS=linux GOARCH=amd64 go build -buildvcs=false -o shenk.elf
+          GOOS=windows GOARCH=amd64 go build -buildvcs=false -o shenk.exe
+          GOOS=darwin GOARCH=amd64 go build -buildvcs=false -o shenk.darwin_amd64
+          GOOS=darwin GOARCH=amd64 go build -buildvcs=false -o shenk.darwin_arm64
+      - name: Release
+        id: issue-release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "shenk.*"
+          allowUpdates: "true"
+          body: "Releasing: ${{ github.ref_name }}"
+          tag: ${{ github.ref_name }}
