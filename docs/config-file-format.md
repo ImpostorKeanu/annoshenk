@@ -1,6 +1,6 @@
 # Config File Format
 
-**Note:** See the `examples/` directory to get a better understanding
+**Note:** See the [examples](examples/) directory to get a better understanding
 of how config files are structured.
 
 A config file is an array of "item" objects:
@@ -34,7 +34,7 @@ A config file is an array of "item" objects:
 
 ## Field Omission
 
-**Reminder:** See the `examples/` directory.
+**Reminder:** See the [examples](examples/) directory.
 
 Any flag can be omitted from a given flag, e.g., these are valid flag configs:
 

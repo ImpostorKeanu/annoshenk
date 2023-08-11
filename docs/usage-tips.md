@@ -23,5 +23,5 @@ prior to the prescribed command.
 
 Any values supplied to the `--tail` flag will be blindly **suffixed**
 to the final command, e.g., `--tail 192.168.1.5` would ensure that a
-target is suffixed to the `examples/nmap.yml` command, giving a clear
+target is suffixed to the [examples](examples/) command, giving a clear
 target to scan.
